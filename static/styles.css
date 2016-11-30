@@ -1,0 +1,54 @@
+body {
+	margin: 0;
+	padding: 0 0 100px 0;
+	font-family: sans-serif;
+}
+.content {
+  padding: 30px;
+}
+
+.banner {
+  padding: 10px;
+	font-family: 'Modak', sans-serif;
+  width: 100%;
+  height: 60px;
+  font-size: 40px;
+  color: black;
+  background-color: grey;
+}
+
+.banner a {
+  text-decoration: none;
+  color: black;
+}
+
+.search {
+  width: 100%;
+  height: 40px;
+  background-color: lightgrey;
+  padding: 10px;
+}
+
+#q {
+  height: 40px;
+  border: 0;
+  font-size: 20px;
+  width: 50%;
+}
+
+#searchbtn {
+  cursor: pointer;
+  height:40px;
+  background-color: lightgray;
+  border: 0;
+  font-size: 20px;
+  -webkit-appearance: none;
+}
+
+.catgriditem {
+  vertical-align: middle;
+  display: inline-block;
+  height: 50px;
+  width: 170px;
+  text-align: center;
+}

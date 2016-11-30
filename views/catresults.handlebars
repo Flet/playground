@@ -1,0 +1,45 @@
+{{#each categoryPath}}
+<a href="/search?cat={{id}}">{{name}}</a> >
+{{/each}}
+
+<h1>{{catName}} ({{total}} products)</h1>
+
+<div class="catgrid">
+{{#each subCategories}}
+  <div class="catgriditem">
+    <a href="/search?cat={{id}}">{{name}}</a>
+  </div>
+{{/each}}
+</div>
+
+{{#*inline "pagination"}}
+  {{#if pages.previous}}
+    <a href="/search?cat={{cat}}&page={{pages.previous}}">Previous</a>
+  {{/if}}
+
+  {{#each pages.pages}}
+  {{#if current}}
+    {{page}}
+  {{else}}
+    <a href="/search?q={{../q}}&page={{page}}">{{page}}</a>
+  {{/if}}
+
+  {{/each}}
+
+  {{#if pages.next}}
+    <a href="/search?cat={{cat}}&page={{pages.next}}">Next</a>
+  {{/if}}
+{{/inline}}
+
+{{> pagination}}
+{{#each data}}
+  <li>
+    <a href="/product/{{id}}">
+      <img src="{{image}}" style="height: 100px; max-width: 100px;">
+      {{name}}
+    </a>
+  </li>
+{{/each}}
+{{> pagination}}
+
+
