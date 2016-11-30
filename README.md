@@ -1,6 +1,6 @@
 # playground
 
-playground website for api-playground
+playground website for BestBuy/api-playground
 
 [![npm][npm-image]][npm-url]
 [![travis][travis-image]][travis-url]
@@ -16,13 +16,8 @@ playground website for api-playground
 ## Install
 
 ```
-npm install playground
-```
-
-## Usage
-
-```js
-var playground = require('playground')
+npm install
+npm start
 ```
 
 ## Contributing
