@@ -2,6 +2,8 @@
 
 playground website for BestBuy/api-playground
 
+Give it a try here: [https://playground.now.sh](https://playground.now.sh)
+
 [![travis][travis-image]][travis-url]
 [![standard][standard-image]][standard-url]
 
