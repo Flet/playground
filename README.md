@@ -14,7 +14,7 @@ playground website for BestBuy/api-playground
 
 ```
 npm install
-npm start
+PLAYGROUND_URL=http://some-api-playground.example.com npm start
 ```
 
 ## Contributing
