@@ -55,7 +55,6 @@ app.post('/locator', (req, res) => {
   get.concat(opts, (err, resp, data) => {
     if (err) throw err;
     if (googleApiKey) {
-      console.log('boom', googleApiKey);
       data.googleApiKey = googleApiKey;
     }
     res.render('locator', data);
