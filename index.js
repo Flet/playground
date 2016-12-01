@@ -7,6 +7,8 @@ var get = require('simple-get');
 var qs = require('qs');
 
 const apiUrl = process.env.PLAYGROUND_URL;
+const googleApiKey = process.env.GOOGLE_API_KEY;
+
 console.log('api url', apiUrl);
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
@@ -34,6 +36,29 @@ app.get('/', (req, res) => {
   get.concat(opts, (err, resp, data) => {
     if (err) throw err;
     res.render('index', {categories: data.data});
+  });
+});
+
+app.get('/locator', (req, res) => res.render('locator'));
+
+app.post('/locator', (req, res) => {
+  var query = {
+    near: req.body.zip
+  };
+
+  var opts = {
+    method: 'GET',
+    url: `${apiUrl}/stores/?${qs.stringify(query)}`,
+    json: true
+  };
+
+  get.concat(opts, (err, resp, data) => {
+    if (err) throw err;
+    if (googleApiKey) {
+      console.log('boom', googleApiKey);
+      data.googleApiKey = googleApiKey;
+    }
+    res.render('locator', data);
   });
 });
 

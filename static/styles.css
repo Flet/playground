@@ -36,10 +36,15 @@ body {
   width: 50%;
 }
 
+#zip {
+  height: 40px;
+  font-size: 20px;
+  width: 175px;
+}
+
 #searchbtn {
   cursor: pointer;
   height:40px;
-  background-color: lightgray;
   border: 0;
   font-size: 20px;
   -webkit-appearance: none;

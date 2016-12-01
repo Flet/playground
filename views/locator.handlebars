@@ -1,0 +1,40 @@
+<h1>Store Locator</h1>
+
+
+<form method="POST">
+  <input id="zip" name="zip" type="text" placeholder="Enter your ZIP code"/>
+  <input id="searchbtn" type="submit" value="🔎" />
+</form>
+
+<ul>
+{{#each data}}
+  <div>
+    <h2>{{name}}</h2>
+    <address>
+    {{address}}<br/>
+    {{city}}, {{state}} {{zip}}
+    </address>
+
+    {{#if ../googleApiKey}}
+    <iframe
+      width="300"
+      height="225"
+      frameborder="0" style="border:0"
+      src="https://www.google.com/maps/embed/v1/place?key={{../googleApiKey}}
+        &q=({{lat}},{{lng}})" allowfullscreen>
+    </iframe>
+    {{/if}}
+
+    <h3>Hours</h3>
+    {{hours}}<br/>
+
+    <h3>Services</h3>
+    <ul>
+    {{#each services}}
+      <li>{{name}}</li>
+    {{/each}}
+    </ul>
+  </div>
+  <hr/>
+{{/each}}
+</li>
